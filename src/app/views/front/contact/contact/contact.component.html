@@ -1,0 +1,207 @@
+<!-- Start Contact -->
+<div class="container py-5">
+  <div class="row py-5">
+    <form
+      class="col-md-9 m-auto"
+      #contact="ngForm"
+      (ngSubmit)="contactData(contact)"
+    >
+      <div class="row">
+        <div class="form-group col-md-6 mb-3">
+          <label for="inputname">Name</label>
+          <input
+            type="text"
+            class="form-control mt-1"
+            id="name"
+            name="Name"
+            placeholder="Name"
+            #Name="ngModel"
+            ngModel
+          />
+        </div>
+        <div class="form-group col-md-6 mb-3">
+          <label for="inputemail">Email</label>
+          <input
+            type="email"
+            class="form-control mt-1"
+            id="email"
+            name="Email"
+            placeholder="Email"
+            #Email="ngModel"
+            ngModel
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="inputsubject">Subject</label>
+        <input
+          type="text"
+          class="form-control mt-1"
+          id="subject"
+          name="Subject"
+          placeholder="Subject"
+          #Subject="ngModel"
+          ngModel
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputmessage">Message</label>
+        <textarea
+          class="form-control mt-1"
+          id="message"
+          name="Message"
+          placeholder="Message"
+          rows="8"
+          #Message="ngModel"
+          ngModel
+        ></textarea>
+      </div>
+      <div class="row">
+        <div class="col text-end mt-2">
+          <button type="submit" class="btn btn-success btn-lg px-3">
+            Let’s Talk
+          </button>
+          <div>{{ messegecont }}</div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- End Contact -->
+<!-- Start Footer -->
+<footer class="bg-dark" id="tempaltemo_footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 pt-5">
+        <h2 class="h2 text-success border-bottom pb-3 border-light logo">
+          Startup JO
+        </h2>
+        <ul class="list-unstyled text-light footer-link-list">
+          <li>
+            <i class="fas fa-map-marker-alt fa-fw"></i>
+            433 Consectetur at Jordan 10660
+          </li>
+          <li>
+            <i class="fa fa-phone fa-fw"></i>
+            <a class="text-decoration-none" href="tel:010-020-0340"
+              >+962770259858</a
+            >
+          </li>
+          <li>
+            <i class="fa fa-envelope fa-fw"></i>
+            <a class="text-decoration-none" href="mailto:info@company.com"
+              >info@company.com</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 pt-5">
+        <h2 class="h2 text-light border-bottom pb-3 border-light">
+          Type Of Startup
+        </h2>
+        <ul class="list-unstyled text-light footer-link-list">
+          <li><a class="text-decoration-none" href="#">DATA </a></li>
+          <li><a class="text-decoration-none" href="#">GAMING</a></li>
+          <li><a class="text-decoration-none" href="#">FINTECH</a></li>
+          <li><a class="text-decoration-none" href="#">RETAIL</a></li>
+          <li><a class="text-decoration-none" href="#">DATA & AI & ML</a></li>
+          <li><a class="text-decoration-none" href="#">Media & Design</a></li>
+          <li><a class="text-decoration-none" href="#">Cyber Security</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 pt-5">
+        <h2 class="h2 text-light border-bottom pb-3 border-light">
+          Further Info
+        </h2>
+        <ul class="list-unstyled text-light footer-link-list">
+          <li><a class="text-decoration-none" routerLink="home">Home</a></li>
+          <li>
+            <a class="text-decoration-none" routerLink="about">About Us</a>
+          </li>
+          <li>
+            <a class="text-decoration-none" routerLink="startup">StartUp</a>
+          </li>
+          <li>
+            <a class="text-decoration-none" routerLink="contact">Contact</a>
+          </li>
+          <li><a class="text-decoration-none" routerLink="login">Login</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row text-light mb-4">
+      <div class="col-12 mb-3">
+        <div class="w-100 my-3 border-top border-light"></div>
+      </div>
+      <div class="col-auto me-auto">
+        <ul class="list-inline text-left footer-icons">
+          <li
+            class="list-inline-item border border-light rounded-circle text-center"
+          >
+            <a
+              class="text-light text-decoration-none"
+              target="_blank"
+              href="http://facebook.com/"
+              ><i class="fab fa-facebook-f fa-lg fa-fw"></i
+            ></a>
+          </li>
+          <li
+            class="list-inline-item border border-light rounded-circle text-center"
+          >
+            <a
+              class="text-light text-decoration-none"
+              target="_blank"
+              href="https://www.instagram.com/"
+              ><i class="fab fa-instagram fa-lg fa-fw"></i
+            ></a>
+          </li>
+          <li
+            class="list-inline-item border border-light rounded-circle text-center"
+          >
+            <a
+              class="text-light text-decoration-none"
+              target="_blank"
+              href="https://twitter.com/"
+              ><i class="fab fa-twitter fa-lg fa-fw"></i
+            ></a>
+          </li>
+          <li
+            class="list-inline-item border border-light rounded-circle text-center"
+          >
+            <a
+              class="text-light text-decoration-none"
+              target="_blank"
+              href="https://www.linkedin.com/"
+              ><i class="fab fa-linkedin fa-lg fa-fw"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-auto">
+        <label class="sr-only" for="subscribeEmail">Email address</label>
+        <div class="input-group mb-2">
+          <input
+            type="text"
+            class="form-control bg-dark border-light"
+            id="subscribeEmail"
+            placeholder="Email address"
+          />
+          <div class="input-group-text btn-success text-light">Subscribe</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-100 bg-black py-3">
+    <div class="container">
+      <div class="row pt-2">
+        <div class="col-12">
+          <p class="text-left text-light"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End Footer -->

@@ -1,0 +1,55 @@
+<div class="col-lg-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Request Table</h4>
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Logo</th>
+              <th>companyName</th>
+              <th>sector</th>
+              <th>city</th>
+              <th>yearOfEstablishment</th>
+              <th>action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let part of requestDate">
+              <td class="py-1">
+                <img [src]="part.logo" alt="image" />
+              </td>
+              <td>{{ part.company }}</td>
+              <td>
+                {{ part.sector }}
+              </td>
+              <td>{{ part.city }}</td>
+              <td>{{ part.yearOfEstablishment }}</td>
+              <td>
+                <li class="list-inline-item">
+                  <button
+                    type="button"
+                    class="btn btn-success btn-circle btn-sm"
+                    (click)="approve(part, part.id)"
+                  >
+                    Approve
+                  </button>
+                </li>
+                <li class="list-inline-item">
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-circle btn-sm"
+                    (click)="deletrequest(part.id)"
+                  >
+                    delete
+                  </button>
+                </li>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

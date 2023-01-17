@@ -1,0 +1,142 @@
+<div class="container">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+    crossorigin="anonymous"
+  />
+  <div class="container">
+    <div class="team-single">
+      <div class="row">
+        <div class="col-lg-4 col-md-5 xs-margin-30px-bottom">
+          <div class="team-single-img">
+            <img
+              [src]="datafromstore.logo"
+              alt=""
+              class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+            />
+          </div>
+        </div>
+
+        <div class="col-lg-8 col-md-7">
+          <div class="team-single-text padding-50px-left sm-no-padding-left">
+            <div class="contact-info-section margin-40px-tb">
+              <ul class="list-style9 no-margin">
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <strong class="margin-10px-left text-orange">
+                        companyName:</strong
+                      >
+                    </div>
+                    <div class="col-md-7 col-7">
+                      <p>{{ datafromstore.company }}</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <i class="far fa-gem text-yellow"></i>
+                      <strong class="margin-10px-left text-yellow">
+                        sector:</strong
+                      >
+                    </div>
+                    <div class="col-md-7 col-7">
+                      <p>{{ datafromstore.sector }}</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <i class="far fa-file text-lightred"></i>
+                      <strong class="margin-10px-left text-lightred">
+                        yearOfEstablishment:</strong
+                      >
+                    </div>
+                    <div class="col-md-7 col-7">
+                      <p>{{ datafromstore.yearOfEstablishment }}</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <i class="fas fa-map-marker-alt text-green"></i>
+                      <strong class="margin-10px-left text-green">
+                        Address:</strong
+                      >
+                    </div>
+                    <div class="col-md-7 col-7">
+                      <p>{{ datafromstore.city }}</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <i class="fas fa-mobile-alt text-purple"></i>
+                      <strong
+                        class="margin-10px-left xs-margin-four-left text-purple"
+                      >
+                        Phone:</strong
+                      >
+                    </div>
+                    <div class="col-md-7 col-7">
+                      <p>{{ datafromstore.phone }}</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <i class="fas fa-envelope text-pink"></i>
+                      <strong
+                        class="margin-10px-left xs-margin-four-left text-pink"
+                      >
+                        Email:</strong
+                      >
+                    </div>
+                    <div class="col-md-7 col-7">
+                      <p>
+                        <a href="javascript:void(0)">{{
+                          datafromstore.email
+                        }}</a>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <h5 class="font-size24 sm-font-size22 xs-font-size20"></h5>
+
+            <div class="sm-no-margin">
+              <div class="progress-text">
+                <div class="row">
+                  <div class="col-7">Number of Employees</div>
+                  <div class="col-5 text-right">
+                    {{ datafromstore.Employees }}%
+                  </div>
+                </div>
+              </div>
+              <div class="custom-progress progress">
+                <div
+                  role="progressbar"
+                  aria-valuenow="70"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="width: 40%"
+                  class="animated custom-bar progress-bar slideInLeft bg-sky"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12"></div>
+      </div>
+    </div>
+  </div>
+</div>

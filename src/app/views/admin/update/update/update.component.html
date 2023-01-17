@@ -1,0 +1,369 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Update Form</h4>
+
+    <form
+      class="forms-sample"
+      #dataAfterupdate="ngForm"
+      (ngSubmit)="updatestartup(dataAfterupdate.value)"
+    >
+      <div class="form-group row">
+        <label for="exampleInputUsername2" class="col-sm-3 col-form-label"
+          >companyName</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputUsername2"
+            placeholder="companyName"
+            name="company"
+            #company="ngModel"
+            ngModel
+            [(ngModel)]="datafromstore.company"
+            required
+            minlength="2"
+            maxlength="10"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="company.errors?.['required'] && company.touched"
+      >
+        Company Name Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" company.touched&&company.errors?.['minlength']"
+      >
+        min charactar is 2 !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" company.touched&&company.errors?.['maxlength']"
+      >
+        max charactar is 10 !
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputEmail2" class="col-sm-3 col-form-label"
+          >sector</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputEmail2"
+            placeholder="sector"
+            name="sector"
+            #sector="ngModel"
+            ngModel
+            [(ngModel)]="datafromstore.sector"
+            required
+            minlength="2"
+            maxlength="13"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="sector.errors?.['required'] && sector.touched"
+      >
+        sector Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" sector.touched&&sector.errors?.['minlength']"
+      >
+        min charactar is 2 !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" sector.touched&&sector.errors?.['maxlength']"
+      >
+        max charactar is 13 !
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputMobile" class="col-sm-3 col-form-label"
+          >city</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputMobile"
+            placeholder="city"
+            name="city"
+            #city="ngModel"
+            ngModel
+            [(ngModel)]="datafromstore.city"
+            required
+            minlength="2"
+            maxlength="10"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="city.errors?.['required'] && city.touched"
+      >
+        city Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" city.touched&&city.errors?.['minlength']"
+      >
+        min charactar is 2 !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" city.touched&&city.errors?.['maxlength']"
+      >
+        max charactar is 10 !
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputPassword2" class="col-sm-3 col-form-label"
+          >founder</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputPassword2"
+            placeholder="founder"
+            name="founder"
+            #founder="ngModel"
+            ngModel
+            [(ngModel)]="datafromstore.founder"
+            required
+            minlength="2"
+            maxlength="12"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="founder.errors?.['required'] && founder.touched"
+      >
+        founder Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" founder.touched&&founder.errors?.['minlength']"
+      >
+        min charactar is 2 !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" founder.touched&&founder.errors?.['maxlength']"
+      >
+        max charactar is 12 !
+      </div>
+      <div class="form-group row">
+        <label
+          for="exampleInputConfirmPassword2"
+          class="col-sm-3 col-form-label"
+          >Employees</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="number"
+            class="form-control"
+            id="exampleInputConfirmPassword2"
+            placeholder="Employees"
+            name="Employees"
+            #Employees="ngModel"
+            ngModel
+            [(ngModel)]="datafromstore.Employees"
+            required
+            minlength="2"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="Employees.errors?.['required'] && Employees.touched"
+      >
+        Employees Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" Employees.touched&&Employees.errors?.['minlength']"
+      >
+        min charactar is 2 !
+      </div>
+      <div class="form-group row">
+        <label
+          for="exampleInputConfirmPassword2"
+          class="col-sm-3 col-form-label"
+          >yearOfEstablishment</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="number"
+            class="form-control"
+            id="exampleInputConfirmPassword2"
+            placeholder="yearOfEstablishment"
+            name="yearOfEstablishment"
+            #yearOfEstablishment="ngModel"
+            ngModel
+            [(ngModel)]="datafromstore.yearOfEstablishment"
+            required
+            minlength="4"
+            maxlength="5"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="yearOfEstablishment.errors?.['required'] && yearOfEstablishment.touched"
+      >
+        yearOfEstablishment Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" yearOfEstablishment.touched&&yearOfEstablishment.errors?.['minlength']"
+      >
+        min charactar is 4 !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" yearOfEstablishment.touched&&yearOfEstablishment.errors?.['maxlength']"
+      >
+        max charactar is 5 !
+      </div>
+      <div class="form-group row">
+        <label
+          for="exampleInputConfirmPassword2"
+          class="col-sm-3 col-form-label"
+          >email</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputConfirmPassword2"
+            placeholder="info@gmail.com"
+            name="email"
+            #email="ngModel"
+            ngModel
+            [(ngModel)]="datafromstore.email"
+            required
+            minlength="2"
+            maxlength="10"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="email.errors?.['required'] && email.touched"
+      >
+        email Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" email.touched&&email.errors?.['minlength']"
+      >
+        min charactar is 2 !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" email.touched&&email.errors?.['maxlength']"
+      >
+        max charactar is 10 !
+      </div>
+      <div class="form-group row">
+        <label
+          for="exampleInputConfirmPassword2"
+          class="col-sm-3 col-form-label"
+          >phone</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="tel"
+            class="form-control"
+            id="exampleInputConfirmPassword2"
+            placeholder="+962"
+            name="phone"
+            #phone="ngModel"
+            ngModel
+            [(ngModel)]="datafromstore.phone"
+            required
+            minlength="7"
+            maxlength="14"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="phone.errors?.['required'] && phone.touched"
+      >
+        phone Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" phone.touched&&phone.errors?.['minlength']"
+      >
+        min charactar is 7 !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" phone.touched&&phone.errors?.['maxlength']"
+      >
+        max charactar is 14 !
+      </div>
+      <div class="form-group row">
+        <label
+          for="exampleInputConfirmPassword2"
+          class="col-sm-3 col-form-label"
+          >logo</label
+        >
+        <div class="col-sm-5">
+          <input
+            type="file"
+            accept="image/*"
+            class="form-control"
+            id="exampleInputConfirmPassword2"
+            placeholder="url-image"
+            name="logo"
+            #logo="ngModel"
+            ngModel
+            [(ngModel)]="datafromstore.logo"
+            (change)="upload($event)"
+            required
+          />
+          <img [src]="datafromstore.logo" alt="" />
+        </div>
+        <!-- <div *ngIf="percentage | async as pct">
+          <div *ngIf="pct == 100" class="alert alert-success">
+            upload successfuly
+          </div>
+          <progress
+            id="js.progressbar"
+            class="uk-progress"
+            [value]="pct"
+            max="100"
+          ></progress>
+        </div> -->
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="logo.errors?.['required'] && logo.touched"
+      >
+        logo Required !
+      </div>
+      <div *ngIf="percentage" class="barprogress">
+        <progress
+          id="js.progressbar"
+          class="uk-progress"
+          [value]="100"
+          max="100"
+        ></progress>
+        <pre>  <span> Upload Success !</span></pre>
+      </div>
+      <button type="submit" class="btn btn-primary me-2">Submit</button>
+      <button class="btn btn-light">Cancel</button>
+      <div>{{ messege }}</div>
+    </form>
+  </div>
+</div>

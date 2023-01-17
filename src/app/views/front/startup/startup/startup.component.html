@@ -1,0 +1,492 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Add Startup Form</h4>
+
+    <form
+      class="forms-sample"
+      #requestform="ngForm"
+      (ngSubmit)="addRequest(requestform)"
+    >
+      <div class="form-group row">
+        <label for="exampleInputUsername2" class="col-sm-3 col-form-label"
+          >companyName</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputUsername2"
+            placeholder="companyName"
+            name="company"
+            #company="ngModel"
+            ngModel
+            required
+            minlength="2"
+            maxlength="10"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="company.errors?.['required'] && company.touched"
+      >
+        Company Name Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" company.touched&&company.errors?.['minlength']"
+      >
+        min charactar is 2 !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" company.touched&&company.errors?.['maxlength']"
+      >
+        max charactar is 10 !
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputEmail2" class="col-sm-3 col-form-label"
+          >sector</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputEmail2"
+            placeholder="sector"
+            name="sector"
+            #sector="ngModel"
+            ngModel
+            required
+            minlength="2"
+            maxlength="13"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="sector.errors?.['required'] && sector.touched"
+      >
+        sector Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" sector.touched&&sector.errors?.['minlength']"
+      >
+        min charactar is 2 !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" sector.touched&&sector.errors?.['maxlength']"
+      >
+        max charactar is 13 !
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputMobile" class="col-sm-3 col-form-label"
+          >city</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputMobile"
+            placeholder="city"
+            name="city"
+            #city="ngModel"
+            ngModel
+            required
+            minlength="2"
+            maxlength="10"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="city.errors?.['required'] && city.touched"
+      >
+        city Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" city.touched&&city.errors?.['minlength']"
+      >
+        min charactar is 2 !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" city.touched&&city.errors?.['maxlength']"
+      >
+        max charactar is 10 !
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputPassword2" class="col-sm-3 col-form-label"
+          >founder</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputPassword2"
+            placeholder="founder"
+            name="founder"
+            #founder="ngModel"
+            ngModel
+            required
+            minlength="2"
+            maxlength="12"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="founder.errors?.['required'] && founder.touched"
+      >
+        founder Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" founder.touched&&founder.errors?.['minlength']"
+      >
+        min charactar is 2 !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" founder.touched&&founder.errors?.['maxlength']"
+      >
+        max charactar is 12 !
+      </div>
+      <div class="form-group row">
+        <label
+          for="exampleInputConfirmPassword2"
+          class="col-sm-3 col-form-label"
+          >Employees</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="number"
+            class="form-control"
+            id="exampleInputConfirmPassword2"
+            placeholder="Employees"
+            name="Employees"
+            #Employees="ngModel"
+            ngModel
+            required
+            minlength="2"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="Employees.errors?.['required'] && Employees.touched"
+      >
+        Employees Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" Employees.touched&&Employees.errors?.['minlength']"
+      >
+        min charactar is 2 !
+      </div>
+      <div class="form-group row">
+        <label
+          for="exampleInputConfirmPassword2"
+          class="col-sm-3 col-form-label"
+          >yearOfEstablishment</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="number"
+            class="form-control"
+            id="exampleInputConfirmPassword2"
+            placeholder="yearOfEstablishment"
+            name="yearOfEstablishment"
+            #yearOfEstablishment="ngModel"
+            ngModel
+            required
+            minlength="4"
+            maxlength="5"
+          />
+        </div>
+      </div>
+
+      <div
+        class="alert alert-danger"
+        *ngIf="yearOfEstablishment.errors?.['required'] && yearOfEstablishment.touched"
+      >
+        yearOfEstablishment Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" yearOfEstablishment.touched&&yearOfEstablishment.errors?.['minlength']"
+      >
+        min charactar is 4 !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" yearOfEstablishment.touched&&yearOfEstablishment.errors?.['maxlength']"
+      >
+        max charactar is 5 !
+      </div>
+      <div class="form-group row">
+        <label
+          for="exampleInputConfirmPassword2"
+          class="col-sm-3 col-form-label"
+          >email</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputConfirmPassword2"
+            placeholder="info@gmail.com"
+            name="email"
+            #email="ngModel"
+            ngModel
+            required
+            minlength="2"
+            maxlength="10"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="email.errors?.['required'] && email.touched"
+      >
+        email Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" email.touched&&email.errors?.['minlength']"
+      >
+        min charactar is 2 !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" email.touched&&email.errors?.['maxlength']"
+      >
+        max charactar is 10 !
+      </div>
+      <div class="form-group row">
+        <label
+          for="exampleInputConfirmPassword2"
+          class="col-sm-3 col-form-label"
+          >phone</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="tel"
+            class="form-control"
+            id="exampleInputConfirmPassword2"
+            placeholder="+962"
+            name="phone"
+            #phone="ngModel"
+            ngModel
+            required
+            minlength="7"
+            maxlength="14"
+          />
+        </div>
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf="phone.errors?.['required'] && phone.touched"
+      >
+        phone Required !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" phone.touched&&phone.errors?.['minlength']"
+      >
+        min charactar is 7 !
+      </div>
+      <div
+        class="alert alert-danger"
+        *ngIf=" phone.touched&&phone.errors?.['maxlength']"
+      >
+        max charactar is 14 !
+      </div>
+      <div class="form-group row">
+        <label
+          for="exampleInputConfirmPassword2"
+          class="col-sm-3 col-form-label"
+          >logo</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="file"
+            accept="image/*"
+            class="form-control"
+            id="exampleInputConfirmPassword2"
+            placeholder="url-image"
+            name="logo"
+            #logo="ngModel"
+            ngModel
+            (change)="upload($event)"
+            required
+          />
+        </div>
+        <div
+          class="alert alert-danger"
+          *ngIf="logo.errors?.['required'] && logo.touched"
+        >
+          logo Required !
+        </div>
+        <div *ngIf="percentage" class="barprogress">
+          <progress
+            id="js.progressbar"
+            class="uk-progress"
+            [value]="100"
+            max="100"
+          ></progress>
+          <pre>  <span> Upload Success !</span></pre>
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary me-2"
+        [disabled]="requestform.invalid"
+      >
+        Submit
+      </button>
+      <button class="btn btn-light">Cancel</button
+      ><span>{{ messegeclint }}</span>
+    </form>
+  </div>
+</div>
+<!-- Start Footer -->
+<footer class="bg-dark" id="tempaltemo_footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 pt-5">
+        <h2 class="h2 text-success border-bottom pb-3 border-light logo">
+          Startup JO
+        </h2>
+        <ul class="list-unstyled text-light footer-link-list">
+          <li>
+            <i class="fas fa-map-marker-alt fa-fw"></i>
+            433 Consectetur at Jordan 10660
+          </li>
+          <li>
+            <i class="fa fa-phone fa-fw"></i>
+            <a class="text-decoration-none" href="tel:010-020-0340"
+              >+962770259858</a
+            >
+          </li>
+          <li>
+            <i class="fa fa-envelope fa-fw"></i>
+            <a class="text-decoration-none" href="mailto:info@company.com"
+              >info@company.com</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 pt-5">
+        <h2 class="h2 text-light border-bottom pb-3 border-light">
+          Type Of Startup
+        </h2>
+        <ul class="list-unstyled text-light footer-link-list">
+          <li><a class="text-decoration-none" href="#">DATA </a></li>
+          <li><a class="text-decoration-none" href="#">GAMING</a></li>
+          <li><a class="text-decoration-none" href="#">FINTECH</a></li>
+          <li><a class="text-decoration-none" href="#">RETAIL</a></li>
+          <li><a class="text-decoration-none" href="#">DATA & AI & ML</a></li>
+          <li><a class="text-decoration-none" href="#">Media & Design</a></li>
+          <li><a class="text-decoration-none" href="#">Cyber Security</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 pt-5">
+        <h2 class="h2 text-light border-bottom pb-3 border-light">
+          Further Info
+        </h2>
+        <ul class="list-unstyled text-light footer-link-list">
+          <li><a class="text-decoration-none" routerLink="home">Home</a></li>
+          <li>
+            <a class="text-decoration-none" routerLink="about">About Us</a>
+          </li>
+          <li>
+            <a class="text-decoration-none" routerLink="startup">StartUp</a>
+          </li>
+          <li>
+            <a class="text-decoration-none" routerLink="contact">Contact</a>
+          </li>
+          <li><a class="text-decoration-none" routerLink="login">Login</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row text-light mb-4">
+      <div class="col-12 mb-3">
+        <div class="w-100 my-3 border-top border-light"></div>
+      </div>
+      <div class="col-auto me-auto">
+        <ul class="list-inline text-left footer-icons">
+          <li
+            class="list-inline-item border border-light rounded-circle text-center"
+          >
+            <a
+              class="text-light text-decoration-none"
+              target="_blank"
+              href="http://facebook.com/"
+              ><i class="fab fa-facebook-f fa-lg fa-fw"></i
+            ></a>
+          </li>
+          <li
+            class="list-inline-item border border-light rounded-circle text-center"
+          >
+            <a
+              class="text-light text-decoration-none"
+              target="_blank"
+              href="https://www.instagram.com/"
+              ><i class="fab fa-instagram fa-lg fa-fw"></i
+            ></a>
+          </li>
+          <li
+            class="list-inline-item border border-light rounded-circle text-center"
+          >
+            <a
+              class="text-light text-decoration-none"
+              target="_blank"
+              href="https://twitter.com/"
+              ><i class="fab fa-twitter fa-lg fa-fw"></i
+            ></a>
+          </li>
+          <li
+            class="list-inline-item border border-light rounded-circle text-center"
+          >
+            <a
+              class="text-light text-decoration-none"
+              target="_blank"
+              href="https://www.linkedin.com/"
+              ><i class="fab fa-linkedin fa-lg fa-fw"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-auto">
+        <label class="sr-only" for="subscribeEmail">Email address</label>
+        <div class="input-group mb-2">
+          <input
+            type="text"
+            class="form-control bg-dark border-light"
+            id="subscribeEmail"
+            placeholder="Email address"
+          />
+          <div class="input-group-text btn-success text-light">Subscribe</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-100 bg-black py-3">
+    <div class="container">
+      <div class="row pt-2">
+        <div class="col-12">
+          <p class="text-left text-light"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End Footer -->

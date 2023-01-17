@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "cap-project-3648e"
+  },
+  "targets": {
+    "cap-project-3648e": {
+      "hosting": {
+        "capston": [
+          "cap-project-3648e"
+        ]
+      }
+    }
+  }
+}
