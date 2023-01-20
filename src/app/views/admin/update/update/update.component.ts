@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { hero } from 'src/app/mock/hero';
 import { ServiceService } from 'src/app/lib/services/service.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-update',

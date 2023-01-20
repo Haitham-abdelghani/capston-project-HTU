@@ -554,7 +554,7 @@
                 [(ngModel)]="closer"
                 required
                 minlength="2"
-                maxlength="13"
+                maxlength="25"
               />
             </div>
             <div
@@ -573,7 +573,7 @@
               class="alert alert-danger"
               *ngIf=" sectorName.touched&&sectorName.errors?.['maxlength']"
             >
-              max charactar is 13 !
+              max charactar is 25 !
             </div>
             <div class="modal-footer">
               <button
