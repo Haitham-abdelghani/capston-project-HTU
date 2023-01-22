@@ -16,7 +16,7 @@ export class LoginComponent {
     this.service
       .signin(loginData.email + '', loginData.password + '')
       .then(() => {
-        this.route.navigate(['/admin-layout']);
+        this.route.navigate(['/admin-layout/dashboard']);
       })
       .catch(() => {
         this.massege = 'Email or Password is wrong';

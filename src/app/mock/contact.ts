@@ -3,4 +3,5 @@ export interface contact {
   Email: string;
   Subject: string;
   Message: string;
+  Date: any;
 }

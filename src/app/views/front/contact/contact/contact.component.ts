@@ -10,10 +10,12 @@ import { contact } from 'src/app/mock/contact';
 export class ContactComponent {
   messegecont: any;
   contactStore: any;
+  time: any = new Date();
   constructor(private firestore: AngularFirestore) {}
 
   // function to set data in contact collection in firebase start
   contactData(contact: any) {
+    let times = this.time / 1000 / 60 / 60;
     let contactStore = contact.value;
     this.firestore
       .collection<contact>('contact')
@@ -23,6 +25,7 @@ export class ContactComponent {
         Email: contactStore.Email,
         Subject: contactStore.Subject,
         Message: contactStore.Message,
+        Date: times,
       })
       .then(() => {
         this.messegecont = 'Request sent';

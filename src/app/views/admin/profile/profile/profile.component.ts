@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
   percentage: any;
   getdata: any;
   requestContact: any;
-  times = Date();
+
   // function to get id of user active start
   user$ = this.fireAuth.authState.pipe(
     switchMap((val) => {
@@ -45,6 +45,7 @@ export class ProfileComponent implements OnInit {
             Email: element.payload.doc.data()['Email'],
             Subject: element.payload.doc.data()['Subject'],
             Message: element.payload.doc.data()['Message'],
+            Date: element.payload.doc.data()['Date'],
           };
         });
       });
