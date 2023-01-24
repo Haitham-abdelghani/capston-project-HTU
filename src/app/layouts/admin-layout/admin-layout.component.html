@@ -472,6 +472,11 @@
           >
             <i class="menu-icon mdi mdi-table"></i>
             <span class="menu-title">Request</span>
+            <span
+              class="badge badge-danger ms-0.2"
+              *ngIf="lengthofrequest != 0"
+              >{{ lengthofrequest }}</span
+            >
             <i class="menu-arrow"></i>
           </a>
         </li>

@@ -1,19 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { heros } from 'src/app/mock/heros';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { of, switchMap } from 'rxjs';
 import { User } from 'src/app/mock/User';
+import { hero } from 'src/app/mock/hero';
 
 @Component({
   selector: 'app-admin-layout',
   templateUrl: './admin-layout.component.html',
   styleUrls: ['./admin-layout.component.css'],
 })
-export class AdminLayoutComponent {
+export class AdminLayoutComponent implements OnInit {
   messegeaddsector: any;
   closer?: string;
+  lengthofrequest: any;
 
   // get data of user from auth start
   user$ = this.fireauth.authState.pipe(
@@ -32,6 +34,16 @@ export class AdminLayoutComponent {
     private fireauth: AngularFireAuth,
     private route: Router
   ) {}
+  ngOnInit(): void {
+    // function to get length from valuechanges start
+    this.firestore
+      .collection<hero>('requestclint')
+      .valueChanges()
+      .subscribe((data) => {
+        this.lengthofrequest = data.length;
+      });
+    // function to get length from valuechanges end
+  }
   addsector(sectordata: any) {
     // function to set sector name in firestore start
 
