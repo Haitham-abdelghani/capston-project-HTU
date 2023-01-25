@@ -12,7 +12,9 @@ import { heros } from 'src/app/mock/heros';
 export class HomeComponent implements OnInit {
   getdata: any;
   nameOfSector: any;
+  loading: boolean = true;
   constructor(private firestore: AngularFirestore, private route: Router) {}
+
   ngOnInit(): void {
     // get data of sector  from firestore start
 
@@ -49,6 +51,9 @@ export class HomeComponent implements OnInit {
             logo: element.payload.doc.data()['logo'],
           };
         });
+        setTimeout(() => {
+          this.loading = false;
+        }, 3000);
       });
     // get data from firestore end
   }

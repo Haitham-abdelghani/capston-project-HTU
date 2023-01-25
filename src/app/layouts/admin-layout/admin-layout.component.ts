@@ -57,6 +57,7 @@ export class AdminLayoutComponent implements OnInit {
       .then(() => {
         this.messegeaddsector = 'success';
         this.closer = '';
+        window.location.reload();
       });
   }
   // function to set sector name in firestore end

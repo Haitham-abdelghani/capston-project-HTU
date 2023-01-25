@@ -1,6 +1,10 @@
 <!-- For demo purpose -->
-
-<div class="container" style="margin-top: 20px">
+<div class="d-flex aligns-items-center justify-content-center">
+  <div class="spinner-grow text-info" role="status" *ngIf="loading">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<div class="container" style="margin-top: 20px" *ngIf="!loading">
   <!-- start li of filter -->
   <div class="row gx-6 align-items-end">
     <div

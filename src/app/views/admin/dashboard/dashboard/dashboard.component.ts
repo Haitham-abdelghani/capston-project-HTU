@@ -13,6 +13,8 @@ export class DashboardComponent implements OnInit {
   getdata: any;
   nameOfSector: any;
   staticData: any;
+  loading: boolean = true;
+
   constructor(private firestore: AngularFirestore, private route: Router) {}
   ngOnInit(): void {
     //  get name of sector to add for li start
@@ -50,7 +52,11 @@ export class DashboardComponent implements OnInit {
           };
         });
       });
+
     // get data from firestore end
+    setTimeout(() => {
+      this.loading = false;
+    }, 3000);
   }
 
   // function to filter startup by sector name start

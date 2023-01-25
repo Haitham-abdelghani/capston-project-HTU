@@ -1,331 +1,345 @@
-<!-- Modal -->
-<div
-  class="modal fade bg-white"
-  id="templatemo_search"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="w-100 pt-1 mb-5 text-right">
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="modal"
-        aria-label="Close"
-      ></button>
-    </div>
-    <form action="" method="get" class="modal-content modal-body border-0 p-0">
-      <div class="input-group mb-2">
-        <input
-          type="text"
-          class="form-control"
-          id="inputModalSearch"
-          name="q"
-          placeholder="Search ..."
-        />
-        <button type="submit" class="input-group-text bg-success text-light">
-          <i class="fa fa-fw fa-search text-white"></i>
-        </button>
-      </div>
-    </form>
+<div class="d-flex aligns-items-center justify-content-center">
+  <div class="spinner-grow text-info" role="status" *ngIf="loading">
+    <span class="sr-only">Loading...</span>
   </div>
 </div>
-<!-- Start Banner Hero -->
-<div
-  id="template-mo-zay-hero-carousel"
-  class="carousel slide"
-  data-bs-ride="carousel"
->
-  <ol class="carousel-indicators">
-    <li
-      data-bs-target="#template-mo-zay-hero-carousel"
-      data-bs-slide-to="0"
-      class="active"
-    ></li>
-    <li
-      data-bs-target="#template-mo-zay-hero-carousel"
-      data-bs-slide-to="1"
-    ></li>
-    <li
-      data-bs-target="#template-mo-zay-hero-carousel"
-      data-bs-slide-to="2"
-    ></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="container">
-        <div class="row p-5">
-          <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-            <img
-              class="img-fluid"
-              src="./assets/langing/img/homeone-01.png"
-              alt=""
-            />
-          </div>
-          <div class="col-lg-6 mb-0 d-flex align-items-center">
-            <div class="text-align-left align-self-center">
-              <h1 class="h1 text-success"><b>Your</b> Gateway</h1>
-              <h3 class="h2">to the Jordanian Entrepreneurship Ecosystem</h3>
-              <p>
-                StartupsJo "Your Gateway to the Jordanian Entrepreneurship
-                Ecosystem" is Jordans’ destination for startups, investors, and
-                support ecosystems.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="container">
-        <div class="row p-5">
-          <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-            <img
-              class="img-fluid"
-              src="./assets/langing/img/hometwo-02.png"
-              alt=""
-            />
-          </div>
-          <div class="col-lg-6 mb-0 d-flex align-items-center">
-            <div class="text-align-left">
-              <h1 class="h1">Support Organizations</h1>
-              <h3 class="h2">connects founders</h3>
-              <p>
-                Connects founders with the right people, Google products, and
-                best practices to help startups grow.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="container">
-        <div class="row p-5">
-          <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-            <img
-              class="img-fluid"
-              src="./assets/langing/img/homethree-03.png"
-              alt=""
-            />
-          </div>
-          <div class="col-lg-6 mb-0 d-flex align-items-center">
-            <div class="text-align-left">
-              <h1 class="h1">Service Providers</h1>
-              <h3 class="h2">connects founders</h3>
-              <p>
-                Find legal, accounting, software development, consulting,
-                coaching, and mentoring service providers.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a
-    class="carousel-control-prev text-decoration-none w-auto ps-3"
-    href="#template-mo-zay-hero-carousel"
-    role="button"
-    data-bs-slide="prev"
-  >
-    <i class="fas fa-chevron-left"></i>
-  </a>
-  <a
-    class="carousel-control-next text-decoration-none w-auto pe-3"
-    href="#template-mo-zay-hero-carousel"
-    role="button"
-    data-bs-slide="next"
-  >
-    <i class="fas fa-chevron-right"></i>
-  </a>
-</div>
-<!-- End Banner Hero -->
 
-<div class="container" style="margin-top: 20px">
-  <!-- start li of filter -->
-  <div class="row gx-6 align-items-end">
-    <div
-      class="section-header text-start mb-5 wow fadeInUp"
-      data-wow-delay="0.1s"
-      style="max-width: 500px"
-    ></div>
-
-    <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
-      <li
-        class="nav-item me-2"
-        *ngFor="let piece of nameOfSector"
-        (click)="selectSector($event)"
-        style="margin-bottom: 4px"
+<div *ngIf="!loading">
+  <!-- Modal -->
+  <div
+    class="modal fade bg-white"
+    id="templatemo_search"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="w-100 pt-1 mb-5 text-right">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form
+        action=""
+        method="get"
+        class="modal-content modal-body border-0 p-0"
       >
-        <a
-          class="btn btn-success btn-circle btn-sm"
-          data-bs-toggle="pill"
-          href="#tab-1"
-          >{{ piece.sectorName }}</a
-        >
-      </li>
-    </ul>
-  </div>
-  <!-- end li of filter -->
-  <div class="row text-center">
-    <!-- Team item -->
-    <div
-      class="col-xl-3 col-sm-6 mb-5"
-      *ngFor="let item of getdata"
-      (click)="details(item.id)"
-    >
-      <div class="bg-white rounded shadow-sm py-5 px-4">
-        <img
-          [src]="item.logo"
-          alt=""
-          width="100"
-          class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
-        />
-        <h5 class="mb-0">{{ item.company }}</h5>
-        <span class="small text-uppercase text-muted">{{ item.sector }}</span>
-      </div>
-    </div>
-    <!-- End -->
-  </div>
-</div>
-
-<!-- Start Footer -->
-<footer class="bg-dark" id="tempaltemo_footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 pt-5">
-        <h2 class="h2 text-success border-bottom pb-3 border-light logo">
-          Startup JO
-        </h2>
-        <ul class="list-unstyled text-light footer-link-list">
-          <li>
-            <i class="fas fa-map-marker-alt fa-fw"></i>
-            433 Consectetur at Jordan 10660
-          </li>
-          <li>
-            <i class="fa fa-phone fa-fw"></i>
-            <a class="text-decoration-none" href="tel:010-020-0340"
-              >+962770259858</a
-            >
-          </li>
-          <li>
-            <i class="fa fa-envelope fa-fw"></i>
-            <a class="text-decoration-none" href="mailto:info@company.com"
-              >info@company.com</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div class="col-md-4 pt-5">
-        <h2 class="h2 text-light border-bottom pb-3 border-light">
-          Type Of Startup
-        </h2>
-        <ul class="list-unstyled text-light footer-link-list">
-          <li><a class="text-decoration-none" href="#">DATA </a></li>
-          <li><a class="text-decoration-none" href="#">GAMING</a></li>
-          <li><a class="text-decoration-none" href="#">FINTECH</a></li>
-          <li><a class="text-decoration-none" href="#">RETAIL</a></li>
-          <li><a class="text-decoration-none" href="#">DATA & AI & ML</a></li>
-          <li><a class="text-decoration-none" href="#">Media & Design</a></li>
-          <li><a class="text-decoration-none" href="#">Cyber Security</a></li>
-        </ul>
-      </div>
-
-      <div class="col-md-4 pt-5">
-        <h2 class="h2 text-light border-bottom pb-3 border-light">
-          Further Info
-        </h2>
-        <ul class="list-unstyled text-light footer-link-list">
-          <li><a class="text-decoration-none" routerLink="home">Home</a></li>
-          <li>
-            <a class="text-decoration-none" routerLink="about">About Us</a>
-          </li>
-          <li>
-            <a class="text-decoration-none" routerLink="startup">StartUp</a>
-          </li>
-          <li>
-            <a class="text-decoration-none" routerLink="contact">Contact</a>
-          </li>
-          <li><a class="text-decoration-none" routerLink="login">Login</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="row text-light mb-4">
-      <div class="col-12 mb-3">
-        <div class="w-100 my-3 border-top border-light"></div>
-      </div>
-      <div class="col-auto me-auto">
-        <ul class="list-inline text-left footer-icons">
-          <li
-            class="list-inline-item border border-light rounded-circle text-center"
-          >
-            <a
-              class="text-light text-decoration-none"
-              target="_blank"
-              href="http://facebook.com/"
-              ><i class="fab fa-facebook-f fa-lg fa-fw"></i
-            ></a>
-          </li>
-          <li
-            class="list-inline-item border border-light rounded-circle text-center"
-          >
-            <a
-              class="text-light text-decoration-none"
-              target="_blank"
-              href="https://www.instagram.com/"
-              ><i class="fab fa-instagram fa-lg fa-fw"></i
-            ></a>
-          </li>
-          <li
-            class="list-inline-item border border-light rounded-circle text-center"
-          >
-            <a
-              class="text-light text-decoration-none"
-              target="_blank"
-              href="https://twitter.com/"
-              ><i class="fab fa-twitter fa-lg fa-fw"></i
-            ></a>
-          </li>
-          <li
-            class="list-inline-item border border-light rounded-circle text-center"
-          >
-            <a
-              class="text-light text-decoration-none"
-              target="_blank"
-              href="https://www.linkedin.com/"
-              ><i class="fab fa-linkedin fa-lg fa-fw"></i
-            ></a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-auto">
-        <label class="sr-only" for="subscribeEmail">Email address</label>
         <div class="input-group mb-2">
           <input
             type="text"
-            class="form-control bg-dark border-light"
-            id="subscribeEmail"
-            placeholder="Email address"
+            class="form-control"
+            id="inputModalSearch"
+            name="q"
+            placeholder="Search ..."
           />
-          <div class="input-group-text btn-success text-light">Subscribe</div>
+          <button type="submit" class="input-group-text bg-success text-light">
+            <i class="fa fa-fw fa-search text-white"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Start Banner Hero -->
+  <div
+    id="template-mo-zay-hero-carousel"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <ol class="carousel-indicators">
+      <li
+        data-bs-target="#template-mo-zay-hero-carousel"
+        data-bs-slide-to="0"
+        class="active"
+      ></li>
+      <li
+        data-bs-target="#template-mo-zay-hero-carousel"
+        data-bs-slide-to="1"
+      ></li>
+      <li
+        data-bs-target="#template-mo-zay-hero-carousel"
+        data-bs-slide-to="2"
+      ></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="row p-5">
+            <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+              <img
+                class="img-fluid"
+                src="./assets/langing/img/homeone-01.png"
+                alt=""
+              />
+            </div>
+            <div class="col-lg-6 mb-0 d-flex align-items-center">
+              <div class="text-align-left align-self-center">
+                <h1 class="h1 text-success"><b>Your</b> Gateway</h1>
+                <h3 class="h2">to the Jordanian Entrepreneurship Ecosystem</h3>
+                <p>
+                  StartupsJo "Your Gateway to the Jordanian Entrepreneurship
+                  Ecosystem" is Jordans’ destination for startups, investors,
+                  and support ecosystems.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="carousel-item">
+        <div class="container">
+          <div class="row p-5">
+            <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+              <img
+                class="img-fluid"
+                src="./assets/langing/img/hometwo-02.png"
+                alt=""
+              />
+            </div>
+            <div class="col-lg-6 mb-0 d-flex align-items-center">
+              <div class="text-align-left">
+                <h1 class="h1">Support Organizations</h1>
+                <h3 class="h2">connects founders</h3>
+                <p>
+                  Connects founders with the right people, Google products, and
+                  best practices to help startups grow.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container">
+          <div class="row p-5">
+            <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+              <img
+                class="img-fluid"
+                src="./assets/langing/img/homethree-03.png"
+                alt=""
+              />
+            </div>
+            <div class="col-lg-6 mb-0 d-flex align-items-center">
+              <div class="text-align-left">
+                <h1 class="h1">Service Providers</h1>
+                <h3 class="h2">connects founders</h3>
+                <p>
+                  Find legal, accounting, software development, consulting,
+                  coaching, and mentoring service providers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a
+      class="carousel-control-prev text-decoration-none w-auto ps-3"
+      href="#template-mo-zay-hero-carousel"
+      role="button"
+      data-bs-slide="prev"
+    >
+      <i class="fas fa-chevron-left"></i>
+    </a>
+    <a
+      class="carousel-control-next text-decoration-none w-auto pe-3"
+      href="#template-mo-zay-hero-carousel"
+      role="button"
+      data-bs-slide="next"
+    >
+      <i class="fas fa-chevron-right"></i>
+    </a>
+  </div>
+  <!-- End Banner Hero -->
+
+  <div class="container" style="margin-top: 20px">
+    <!-- start li of filter -->
+    <div class="row gx-6 align-items-end">
+      <div
+        class="section-header text-start mb-5 wow fadeInUp"
+        data-wow-delay="0.1s"
+        style="max-width: 500px"
+      ></div>
+
+      <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
+        <li
+          class="nav-item me-2"
+          *ngFor="let piece of nameOfSector"
+          (click)="selectSector($event)"
+          style="margin-bottom: 4px"
+        >
+          <a
+            class="btn btn-success btn-circle btn-sm"
+            data-bs-toggle="pill"
+            href="#tab-1"
+            >{{ piece.sectorName }}</a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- end li of filter -->
+    <div class="row text-center">
+      <!-- Team item -->
+      <div
+        class="col-xl-3 col-sm-6 mb-5"
+        *ngFor="let item of getdata"
+        (click)="details(item.id)"
+      >
+        <div class="bg-white rounded shadow-sm py-5 px-4">
+          <img
+            [src]="item.logo"
+            alt=""
+            width="100"
+            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+          />
+          <h5 class="mb-0">{{ item.company }}</h5>
+          <span class="small text-uppercase text-muted">{{ item.sector }}</span>
+        </div>
+      </div>
+      <!-- End -->
     </div>
   </div>
 
-  <div class="w-100 bg-black py-3">
+  <!-- Start Footer -->
+  <footer class="bg-dark" id="tempaltemo_footer">
     <div class="container">
-      <div class="row pt-2">
-        <div class="col-12">
-          <p class="text-left text-light"></p>
+      <div class="row">
+        <div class="col-md-4 pt-5">
+          <h2 class="h2 text-success border-bottom pb-3 border-light logo">
+            Startup JO
+          </h2>
+          <ul class="list-unstyled text-light footer-link-list">
+            <li>
+              <i class="fas fa-map-marker-alt fa-fw"></i>
+              433 Consectetur at Jordan 10660
+            </li>
+            <li>
+              <i class="fa fa-phone fa-fw"></i>
+              <a class="text-decoration-none" href="tel:010-020-0340"
+                >+962770259858</a
+              >
+            </li>
+            <li>
+              <i class="fa fa-envelope fa-fw"></i>
+              <a class="text-decoration-none" href="mailto:info@company.com"
+                >info@company.com</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 pt-5">
+          <h2 class="h2 text-light border-bottom pb-3 border-light">
+            Type Of Startup
+          </h2>
+          <ul class="list-unstyled text-light footer-link-list">
+            <li><a class="text-decoration-none" href="#">DATA </a></li>
+            <li><a class="text-decoration-none" href="#">GAMING</a></li>
+            <li><a class="text-decoration-none" href="#">FINTECH</a></li>
+            <li><a class="text-decoration-none" href="#">RETAIL</a></li>
+            <li><a class="text-decoration-none" href="#">DATA & AI & ML</a></li>
+            <li><a class="text-decoration-none" href="#">Media & Design</a></li>
+            <li><a class="text-decoration-none" href="#">Cyber Security</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 pt-5">
+          <h2 class="h2 text-light border-bottom pb-3 border-light">
+            Further Info
+          </h2>
+          <ul class="list-unstyled text-light footer-link-list">
+            <li><a class="text-decoration-none" routerLink="home">Home</a></li>
+            <li>
+              <a class="text-decoration-none" routerLink="about">About Us</a>
+            </li>
+            <li>
+              <a class="text-decoration-none" routerLink="startup">StartUp</a>
+            </li>
+            <li>
+              <a class="text-decoration-none" routerLink="contact">Contact</a>
+            </li>
+            <li>
+              <a class="text-decoration-none" routerLink="login">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row text-light mb-4">
+        <div class="col-12 mb-3">
+          <div class="w-100 my-3 border-top border-light"></div>
+        </div>
+        <div class="col-auto me-auto">
+          <ul class="list-inline text-left footer-icons">
+            <li
+              class="list-inline-item border border-light rounded-circle text-center"
+            >
+              <a
+                class="text-light text-decoration-none"
+                target="_blank"
+                href="http://facebook.com/"
+                ><i class="fab fa-facebook-f fa-lg fa-fw"></i
+              ></a>
+            </li>
+            <li
+              class="list-inline-item border border-light rounded-circle text-center"
+            >
+              <a
+                class="text-light text-decoration-none"
+                target="_blank"
+                href="https://www.instagram.com/"
+                ><i class="fab fa-instagram fa-lg fa-fw"></i
+              ></a>
+            </li>
+            <li
+              class="list-inline-item border border-light rounded-circle text-center"
+            >
+              <a
+                class="text-light text-decoration-none"
+                target="_blank"
+                href="https://twitter.com/"
+                ><i class="fab fa-twitter fa-lg fa-fw"></i
+              ></a>
+            </li>
+            <li
+              class="list-inline-item border border-light rounded-circle text-center"
+            >
+              <a
+                class="text-light text-decoration-none"
+                target="_blank"
+                href="https://www.linkedin.com/"
+                ><i class="fab fa-linkedin fa-lg fa-fw"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-auto">
+          <label class="sr-only" for="subscribeEmail">Email address</label>
+          <div class="input-group mb-2">
+            <input
+              type="text"
+              class="form-control bg-dark border-light"
+              id="subscribeEmail"
+              placeholder="Email address"
+            />
+            <div class="input-group-text btn-success text-light">Subscribe</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
-<!-- End Footer -->
+
+    <div class="w-100 bg-black py-3">
+      <div class="container">
+        <div class="row pt-2">
+          <div class="col-12">
+            <p class="text-left text-light"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+</div>
