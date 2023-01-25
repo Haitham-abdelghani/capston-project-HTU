@@ -15,7 +15,7 @@ export class AddstartupComponent {
   pct: number = 100;
   constructor(
     private firestore: AngularFirestore,
-    private firestorage: AngularFireStorage,
+
     private service: ServiceService
   ) {}
   // add startup from form to firebase start
