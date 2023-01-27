@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { of, switchMap } from 'rxjs';
 import { User } from 'src/app/mock/User';
 import { hero } from 'src/app/mock/hero';
+import { ServiceService } from 'src/app/lib/services/service.service';
 
 @Component({
   selector: 'app-admin-layout',
@@ -32,7 +33,8 @@ export class AdminLayoutComponent implements OnInit {
   constructor(
     private firestore: AngularFirestore,
     private fireauth: AngularFireAuth,
-    private route: Router
+    private route: Router,
+    private service: ServiceService
   ) {}
   ngOnInit(): void {
     // function to get length from valuechanges start
@@ -48,17 +50,11 @@ export class AdminLayoutComponent implements OnInit {
     // function to set sector name in firestore start
 
     let formsector = sectordata.value;
-    this.firestore
-      .collection<heros>('addsector')
-      .doc()
-      .set({
-        sectorName: formsector.sectorName,
-      })
-      .then(() => {
-        this.messegeaddsector = 'success';
-        this.closer = '';
-        window.location.reload();
-      });
+    this.service.addSectorFunction({ ...formsector }).then(() => {
+      this.messegeaddsector = 'success';
+      this.closer = '';
+      window.location.reload();
+    });
   }
   // function to set sector name in firestore end
 

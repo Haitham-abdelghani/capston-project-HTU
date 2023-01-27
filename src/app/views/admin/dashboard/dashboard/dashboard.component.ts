@@ -3,6 +3,7 @@ import { hero } from 'src/app/mock/hero';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { heros } from 'src/app/mock/heros';
 import { Router } from '@angular/router';
+import { ServiceService } from 'src/app/lib/services/service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,48 +16,46 @@ export class DashboardComponent implements OnInit {
   staticData: any;
   loading: boolean = true;
 
-  constructor(private firestore: AngularFirestore, private route: Router) {}
+  constructor(
+    private firestore: AngularFirestore,
+    private route: Router,
+    private service: ServiceService
+  ) {}
   ngOnInit(): void {
     //  get name of sector to add for li start
-    this.firestore
-      .collection<heros>('addsector')
-      .snapshotChanges()
-      .subscribe((data) => {
-        this.nameOfSector = data.map((element) => {
-          return {
-            sectorName: element.payload.doc.data()['sectorName'],
-          };
-        });
+    this.service.addsector().subscribe((data) => {
+      this.nameOfSector = data.map((element) => {
+        return {
+          sectorName: element.payload.doc.data()['sectorName'],
+        };
       });
+    });
     //  get name of sector to add for li end
 
     // get data from firestore start
 
-    this.firestore
-      .collection<hero>('addstartup')
-      .snapshotChanges()
-      .subscribe((data) => {
-        this.getdata = data.map((element) => {
-          return {
-            id: element.payload.doc.id,
-            company: element.payload.doc.data()['company'],
-            sector: element.payload.doc.data()['sector'],
-            city: element.payload.doc.data()['city'],
-            founder: element.payload.doc.data()['founder'],
-            Employees: element.payload.doc.data()['Employees'],
-            yearOfEstablishment:
-              element.payload.doc.data()['yearOfEstablishment'],
-            email: element.payload.doc.data()['email'],
-            phone: element.payload.doc.data()['phone'],
-            logo: element.payload.doc.data()['logo'],
-          };
-        });
+    this.service.getStartups().subscribe((data) => {
+      this.getdata = data.map((element) => {
+        return {
+          id: element.payload.doc.id,
+          company: element.payload.doc.data()['company'],
+          sector: element.payload.doc.data()['sector'],
+          city: element.payload.doc.data()['city'],
+          founder: element.payload.doc.data()['founder'],
+          Employees: element.payload.doc.data()['Employees'],
+          yearOfEstablishment:
+            element.payload.doc.data()['yearOfEstablishment'],
+          email: element.payload.doc.data()['email'],
+          phone: element.payload.doc.data()['phone'],
+          logo: element.payload.doc.data()['logo'],
+        };
       });
+      setTimeout(() => {
+        this.loading = false;
+      }, 3000);
+    });
 
     // get data from firestore end
-    setTimeout(() => {
-      this.loading = false;
-    }, 3000);
   }
 
   // function to filter startup by sector name start

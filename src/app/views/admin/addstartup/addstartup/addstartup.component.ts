@@ -21,22 +21,10 @@ export class AddstartupComponent {
   // add startup from form to firebase start
   addstartup(formaddstartup: any) {
     let startupdata = formaddstartup.value;
-    this.firestore
-      .collection<hero>('addstartup')
-      .doc()
-      .set({
-        company: startupdata.company,
-        sector: startupdata.sector,
-        city: startupdata.city,
-        founder: startupdata.founder,
-        Employees: startupdata.Employees,
-        yearOfEstablishment: startupdata.yearOfEstablishment,
-        email: startupdata.email,
-        phone: startupdata.phone,
-        logo: this.percentage,
-      })
+    this.service
+      .addstartups({ ...startupdata, logo: this.percentage })
       .then(() => {
-        this.messege = 'Success Adding';
+        this.messege = `Success`;
         window.location.reload();
       });
   }
