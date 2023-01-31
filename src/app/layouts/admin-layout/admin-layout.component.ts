@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { heros } from 'src/app/mock/heros';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -13,7 +13,7 @@ import { ServiceService } from 'src/app/lib/services/service.service';
   templateUrl: './admin-layout.component.html',
   styleUrls: ['./admin-layout.component.css'],
 })
-export class AdminLayoutComponent implements OnInit {
+export class AdminLayoutComponent implements OnInit, OnDestroy {
   messegeaddsector: any;
   closer?: string;
   lengthofrequest: any;
@@ -36,6 +36,7 @@ export class AdminLayoutComponent implements OnInit {
     private route: Router,
     private service: ServiceService
   ) {}
+
   ngOnInit(): void {
     // function to get length from valuechanges start
     this.firestore
@@ -65,4 +66,8 @@ export class AdminLayoutComponent implements OnInit {
     });
   }
   // log out function end
+
+  ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
+  }
 }

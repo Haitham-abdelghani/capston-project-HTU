@@ -54,7 +54,9 @@ export class ServiceService {
   }
 
   getStartupsHome() {
-    return this.firestore.collection<hero>('addstartup').valueChanges();
+    return this.firestore
+      .collection<hero>('addstartup')
+      .valueChanges({ idField: 'id' });
   }
 
   addSectorFunction(formsector: any) {
@@ -63,5 +65,12 @@ export class ServiceService {
 
   contactFunction(contactStore: any) {
     return this.firestore.collection<contact>('contact').add(contactStore);
+  }
+
+  addstartupsRequest(requestData: any) {
+    return this.firestore.collection<hero>('requestclint').add(requestData);
+  }
+  addstartupsApprove(approvedata: any) {
+    return this.firestore.collection<hero>('addstartup').add(approvedata);
   }
 }

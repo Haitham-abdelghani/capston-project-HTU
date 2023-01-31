@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { hero } from 'src/app/mock/hero';
 import { ServiceService } from 'src/app/lib/services/service.service';
@@ -13,6 +13,7 @@ export class UpdateComponent implements OnInit {
   dataquery: any;
   messege: any;
   percentage: any;
+
   datafromstore: hero = {
     company: '',
     sector: '',
@@ -27,7 +28,8 @@ export class UpdateComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private firestore: AngularFirestore,
-    private service: ServiceService
+    private service: ServiceService,
+    private router: Router
   ) {
     this.route.params.subscribe((query) => {
       return (this.dataquery = query['id']);
@@ -49,11 +51,15 @@ export class UpdateComponent implements OnInit {
         .collection<hero>('addstartup')
         .doc(this.dataquery)
         .update({ ...dataAfterupdate, logo: this.percentage });
+      this.messege = `Update Success`;
+      this.router.navigate(['/admin-layout']);
     } else {
       this.firestore
         .collection<hero>('addstartup')
         .doc(this.dataquery)
         .update({ ...dataAfterupdate });
+      this.messege = `Update Success`;
+      this.router.navigate(['/admin-layout']);
     }
   }
 

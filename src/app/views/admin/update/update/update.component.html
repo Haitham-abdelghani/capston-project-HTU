@@ -23,7 +23,7 @@
             [(ngModel)]="datafromstore.company"
             required
             minlength="2"
-            maxlength="10"
+            maxlength="30"
           />
         </div>
       </div>
@@ -43,7 +43,7 @@
         class="alert alert-danger"
         *ngIf=" company.touched&&company.errors?.['maxlength']"
       >
-        max charactar is 10 !
+        max charactar is 30 !
       </div>
       <div class="form-group row">
         <label for="exampleInputEmail2" class="col-sm-3 col-form-label"
@@ -61,7 +61,7 @@
             [(ngModel)]="datafromstore.sector"
             required
             minlength="2"
-            maxlength="13"
+            maxlength="25"
           />
         </div>
       </div>
@@ -81,7 +81,7 @@
         class="alert alert-danger"
         *ngIf=" sector.touched&&sector.errors?.['maxlength']"
       >
-        max charactar is 13 !
+        max charactar is 25 !
       </div>
       <div class="form-group row">
         <label for="exampleInputMobile" class="col-sm-3 col-form-label"
@@ -137,7 +137,7 @@
             [(ngModel)]="datafromstore.founder"
             required
             minlength="2"
-            maxlength="12"
+            maxlength="25"
           />
         </div>
       </div>
@@ -157,7 +157,7 @@
         class="alert alert-danger"
         *ngIf=" founder.touched&&founder.errors?.['maxlength']"
       >
-        max charactar is 12 !
+        max charactar is 25 !
       </div>
       <div class="form-group row">
         <label
@@ -250,7 +250,7 @@
             [(ngModel)]="datafromstore.email"
             required
             minlength="2"
-            maxlength="10"
+            maxlength="40"
           />
         </div>
       </div>
@@ -270,7 +270,7 @@
         class="alert alert-danger"
         *ngIf=" email.touched&&email.errors?.['maxlength']"
       >
-        max charactar is 10 !
+        max charactar is 40 !
       </div>
       <div class="form-group row">
         <label
@@ -334,17 +334,6 @@
           />
           <img [src]="datafromstore.logo" alt="" />
         </div>
-        <!-- <div *ngIf="percentage | async as pct">
-          <div *ngIf="pct == 100" class="alert alert-success">
-            upload successfuly
-          </div>
-          <progress
-            id="js.progressbar"
-            class="uk-progress"
-            [value]="pct"
-            max="100"
-          ></progress>
-        </div> -->
       </div>
       <div
         class="alert alert-danger"

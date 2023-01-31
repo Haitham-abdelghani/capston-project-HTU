@@ -28,10 +28,7 @@ export class ContactComponent {
     this.time.getSeconds();
   // to get time of send message end
 
-  constructor(
-    private firestore: AngularFirestore,
-    private service: ServiceService
-  ) {}
+  constructor(private service: ServiceService) {}
 
   // function to set data in contact collection in firebase start
   contactData(contact: any) {

@@ -17,6 +17,7 @@
             placeholder="Name"
             #Name="ngModel"
             ngModel
+            required
           />
         </div>
         <div class="form-group col-md-6 mb-3">
@@ -58,7 +59,11 @@
       </div>
       <div class="row">
         <div class="col text-end mt-2">
-          <button type="submit" class="btn btn-success btn-lg px-3">
+          <button
+            type="submit"
+            [disabled]="contact.invalid"
+            class="btn btn-success btn-lg px-3"
+          >
             Let’s Talk
           </button>
           <div>{{ messegecont }}</div>
@@ -116,17 +121,19 @@
           Further Info
         </h2>
         <ul class="list-unstyled text-light footer-link-list">
-          <li><a class="text-decoration-none" routerLink="home">Home</a></li>
+          <li><a class="text-decoration-none" href="home">Home</a></li>
           <li>
-            <a class="text-decoration-none" routerLink="about">About Us</a>
+            <a class="text-decoration-none" href="about">About Us</a>
           </li>
           <li>
-            <a class="text-decoration-none" routerLink="startup">StartUp</a>
+            <a class="text-decoration-none" href="startup">StartUp</a>
           </li>
           <li>
-            <a class="text-decoration-none" routerLink="contact">Contact</a>
+            <a class="text-decoration-none" href="contact">Contact</a>
           </li>
-          <li><a class="text-decoration-none" routerLink="login">Login</a></li>
+          <li>
+            <a class="text-decoration-none" href="login">Login</a>
+          </li>
         </ul>
       </div>
     </div>

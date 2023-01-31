@@ -1,26 +1,23 @@
-import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Component, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ServiceService } from 'src/app/lib/services/service.service';
-import { hero } from 'src/app/mock/hero';
 
 @Component({
   selector: 'app-startup',
   templateUrl: './startup.component.html',
   styleUrls: ['./startup.component.css'],
 })
-export class StartupComponent {
+export class StartupComponent implements OnDestroy {
   messegeclint: any;
   percentage: any;
-  constructor(
-    private firestore: AngularFirestore,
-    private service: ServiceService
-  ) {}
+  sub: Subscription | undefined;
+  constructor(private service: ServiceService) {}
 
   //  function add request from client to admin start
   addRequest(requestform: any) {
     let requestData = requestform.value;
     this.service
-      .addstartups({ ...requestData, logo: this.percentage })
+      .addstartupsRequest({ ...requestData, logo: this.percentage })
       .then(() => {
         this.messegeclint = 'request sent';
         window.location.reload();
@@ -33,10 +30,13 @@ export class StartupComponent {
   upload(event: Event) {
     const file = (event.target as HTMLInputElement)?.files?.[0];
     if (file) {
-      this.service.uploadimage(file).subscribe((value) => {
+      this.sub = this.service.uploadimage(file).subscribe((value) => {
         this.percentage = value;
       });
     }
   }
   // upload photo from firebase storage end
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe();
+  }
 }

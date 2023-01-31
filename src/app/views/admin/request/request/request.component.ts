@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { ServiceService } from 'src/app/lib/services/service.service';
 import { hero } from 'src/app/mock/hero';
 
 @Component({
@@ -9,7 +10,10 @@ import { hero } from 'src/app/mock/hero';
 })
 export class RequestComponent implements OnInit {
   requestDate: any;
-  constructor(private firestore: AngularFirestore) {}
+  constructor(
+    private firestore: AngularFirestore,
+    private service: ServiceService
+  ) {}
   ngOnInit(): void {
     // get all requests uesers form database start
     this.firestore
@@ -44,18 +48,8 @@ export class RequestComponent implements OnInit {
   // approve request start
   approve(part: any, id: any) {
     let approvedata = part;
+    this.service.addstartupsApprove({ ...approvedata, id });
 
-    this.firestore.collection<hero>('addstartup').doc().set({
-      company: approvedata.company,
-      sector: approvedata.sector,
-      city: approvedata.city,
-      founder: approvedata.founder,
-      Employees: approvedata.Employees,
-      yearOfEstablishment: approvedata.yearOfEstablishment,
-      email: approvedata.email,
-      phone: approvedata.phone,
-      logo: approvedata.logo,
-    });
     this.firestore.collection('requestclint').doc(id).delete();
   }
   // approve request end

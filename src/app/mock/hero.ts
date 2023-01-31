@@ -8,4 +8,5 @@ export interface hero {
   email: string;
   phone: string;
   logo?: string;
+  id?: string;
 }
