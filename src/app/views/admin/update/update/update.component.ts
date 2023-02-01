@@ -52,14 +52,14 @@ export class UpdateComponent implements OnInit {
         .doc(this.dataquery)
         .update({ ...dataAfterupdate, logo: this.percentage });
       this.messege = `Update Success`;
-      this.router.navigate(['/admin-layout']);
+      this.router.navigate(['/admin-layout/dashboard']);
     } else {
       this.firestore
         .collection<hero>('addstartup')
         .doc(this.dataquery)
         .update({ ...dataAfterupdate });
       this.messege = `Update Success`;
-      this.router.navigate(['/admin-layout']);
+      this.router.navigate(['/admin-layout/dashboard']);
     }
   }
 
